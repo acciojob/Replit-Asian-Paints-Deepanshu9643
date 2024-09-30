@@ -17,7 +17,7 @@ const block = document.getElementById(num)
 		})
 
 	document.querySelector("#reset").addEventListener("click",function() {
-		const griditem =  document.querySelectorAll("grid-item")
+		const griditem =  document.querySelectorAll(".grid-item")
 		 griditem.forEach(reset => {
 			 reset.style.backgroundColor = "transparent"
 		 })
