@@ -1,29 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const blockInput = document.getElementById('block_id');
-    const colourInput = document.getElementById('colour_id');
-    const changeButton = document.getElementById('change_button');
-    const resetButton = document.getElementById('reset_button');
-    const gridItems = document.querySelectorAll('.grid-item');
+//your JS code here. If required.
+document.querySelector("#change_button").addEventListener("click",function() {
+	  const num = document.querySelector("#block_id").value
+	const color = document.querySelector("#color_id").value
 
-    // Ensure all elements exist before attaching listeners
-    if (blockInput && colourInput && changeButton && resetButton) {
-        changeButton.addEventListener('click', function() {
-            const blockNumber = parseInt(blockInput.value);
-            const color = colourInput.value;
+	const griditem =  document.querySelectorAll(".grid-item")
+	griditem.forEach(item => {
+		item.style.backgroundColor = "transparent"
+	})
 
-            if (blockNumber >= 1 && blockNumber <= 9) {
-                // Set the color of the specified grid item
-                gridItems[blockNumber - 1].style.backgroundColor = color;
-            }
-        });
+const block = document.getElementById(num)
+	if(block){
+		block.style.backgroundColor = color
+	}else{
+		alert("Please choose a Number")
+	}
+		})
 
-        resetButton.addEventListener('click', function() {
-            // Reset the color of all grid items
-            gridItems.forEach(item => {
-                item.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-            });
-        });
-    } else {
-        console.error('One or more elements are missing in the DOM.');
-    }
-});
+	document.querySelector("#reset").addEventListener("click",function() {
+		const griditem =  document.querySelectorAll(".grid-item")
+		 griditem.forEach(reset => {
+			 reset.style.backgroundColor = "transparent"
+		 })
+		})
