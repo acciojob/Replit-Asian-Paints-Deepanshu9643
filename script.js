@@ -1,24 +1,30 @@
-//your JS code here. If required.
-document.querySelector("#change_button").addEventListener("click",function() {
-	  const num = document.querySelector("#block_id").value
-	const color = document.querySelector("#color_id").value
+document.querySelector("#change_button").addEventListener("click", function() {
+    const num = document.querySelector("#block_id").value;
+    const color = document.querySelector("#color_id").value;
 
-	const griditem =  document.querySelectorAll(".grid-item")
-	griditem.forEach(item => {
-		item.style.backgroundColor = "transparent"
-	})
+    const gridItems = document.querySelectorAll(".grid-item");
+    
+    // Reset all grid items to transparent
+    gridItems.forEach(item => {
+        item.style.backgroundColor = "transparent";
+    });
 
-const block = document.getElementById(num)
-	if(block){
-		block.style.backgroundColor = color
-	}else{
-		alert("Please choose a Number")
-	}
-		})
+    // Validate if num is a valid ID and a number
+    if (num && !isNaN(num)) {
+        const block = document.getElementById(num);
+        if (block) {
+            block.style.backgroundColor = color;
+        } else {
+            alert("Please choose a valid block number.");
+        }
+    } else {
+        alert("Please enter a valid number.");
+    }
+});
 
-	document.querySelector("#reset").addEventListener("click",function() {
-		const griditem =  document.querySelectorAll(".grid-item")
-		 griditem.forEach(reset => {
-			 reset.style.backgroundColor = "transparent"
-		 })
-		})
+document.querySelector("#reset").addEventListener("click", function() {
+    const gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach(item => {
+        item.style.backgroundColor = "transparent";
+    });
+});
