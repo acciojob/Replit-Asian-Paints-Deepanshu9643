@@ -3,13 +3,11 @@ document.querySelector("#change_button").addEventListener("click", function() {
     const color = document.querySelector("#color_id").value;
 
     const gridItems = document.querySelectorAll(".grid-item");
-    
-    // Reset all grid items to transparent
+
     gridItems.forEach(item => {
         item.style.backgroundColor = "transparent";
     });
 
-    // Validate if num is a valid ID and a number
     if (num && !isNaN(num)) {
         const block = document.getElementById(num);
         if (block) {
